@@ -1,9 +1,10 @@
 #!/bin/bash
 # Install tools
 sudo apt update
-sudo apt -y full-upgrade
-sudo apt -y install rpi-update
-sudo rpi-update -y
+sudo apt -y upgrade
+# sudo apt -y full-upgrade
+# sudo apt -y install rpi-update
+# sudo rpi-update -y
 sudo apt -y install nano emacs libraspberrypi-dev autoconf automake libtool pkg-config alsa-base alsa-tools alsa-utils
 
 
@@ -22,6 +23,9 @@ git clone https://github.com/ivadim/fruitnanny
 # Generate certificates
 cd /opt/fruitnanny
 openssl req -x509 -sha256 -nodes -days 2650 -newkey rsa:2048 -keyout configuration/ssl/fruitnanny.key -out configuration/ssl/fruitnanny.pem -subj "/C=AU/ST=NSW/L=Sydney/O=MongoDB/OU=root/CN=`hostname -f`"
+sudo mkdir /etc/fruitnanny-ssl/
+sudo cp /opt/fruitnanny/configuration/ssl/fruitnanny.key /etc/fruitnanny-ssl/
+sudo cp /opt/fruitnanny/configuration/ssl/fruitnanny.pem /etc/fruitnanny-ssl/
 
 
 # Install NodeJS
@@ -29,7 +33,6 @@ openssl req -x509 -sha256 -nodes -days 2650 -newkey rsa:2048 -keyout configurati
 # sudo apt -y install nodejs
 # проверка
 # node -v
-
 # Install Node.js v14.x
 curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt -y install nodejs
@@ -74,9 +77,9 @@ snap list janus-gateway
 
 # Copy these files into Janus config directory:
 # sudo mkdir janus
-cp /opt/fruitnanny/configuration/janus/janus.jcfg /var/snap/janus-gateway/common/etc
-cp /opt/fruitnanny/configuration/janus/janus.plugin.streaming.jcfg /var/snap/janus-gateway/common/etc
-cp /opt/fruitnanny/configuration/janus/janus.transport.http.jcfg /var/snap/janus-gateway/common/etc
+sudo cp /opt/fruitnanny/configuration/janus/janus.jcfg /var/snap/janus-gateway/common/etc
+sudo cp /opt/fruitnanny/configuration/janus/janus.plugin.streaming.jcfg /var/snap/janus-gateway/common/etc
+sudo cp /opt/fruitnanny/configuration/janus/janus.transport.http.jcfg /var/snap/janus-gateway/common/etc
 
 
 # Nginx
@@ -105,5 +108,3 @@ sudo systemctl start video
 # sudo systemctl start janus
 sudo systemctl enable fruitnanny
 sudo systemctl start fruitnanny
-
-
