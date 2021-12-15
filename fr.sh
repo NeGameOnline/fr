@@ -77,9 +77,9 @@ snap list janus-gateway
 
 # Copy these files into Janus config directory:
 # sudo mkdir janus
-sudo cp /opt/fruitnanny/configuration/janus/janus.jcfg /var/snap/janus-gateway/common/etc
-sudo cp /opt/fruitnanny/configuration/janus/janus.plugin.streaming.jcfg /var/snap/janus-gateway/common/etc
-sudo cp /opt/fruitnanny/configuration/janus/janus.transport.http.jcfg /var/snap/janus-gateway/common/etc
+# sudo cp /opt/fruitnanny/configuration/janus/janus.jcfg /var/snap/janus-gateway/common/etc
+# sudo cp /opt/fruitnanny/configuration/janus/janus.plugin.streaming.jcfg /var/snap/janus-gateway/common/etc
+# sudo cp /opt/fruitnanny/configuration/janus/janus.transport.http.jcfg /var/snap/janus-gateway/common/etc
 
 
 # Nginx
