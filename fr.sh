@@ -5,7 +5,7 @@ sudo apt -y upgrade
 # sudo apt -y full-upgrade
 # sudo apt -y install rpi-update
 # sudo rpi-update -y
-sudo apt -y install nano emacs libraspberrypi-dev autoconf automake libtool pkg-config alsa-base alsa-tools alsa-utils
+sudo apt -y install nano git emacs libraspberrypi-dev autoconf automake libtool pkg-config alsa-base alsa-tools alsa-utils
 
 
 # enable camera
