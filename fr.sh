@@ -69,7 +69,9 @@ sudo apt -y install docker-compose
 # info https://github.com/RSATom/janus-gateway-snap
 # chek run
 # sudo systemctl status snap.janus-gateway.janus-gateway.service
-sudo apt -y install snapd
+sudo apt -y install snap snapd
+sudo snap install core
+sudo snap refresh core
 sudo snap install janus-gateway
 # chek
 snap list janus-gateway
