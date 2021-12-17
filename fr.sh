@@ -79,9 +79,16 @@ snap list janus-gateway
 
 # Copy these files into Janus config directory:
 # sudo mkdir janus
-# sudo cp /opt/fruitnanny/configuration/janus/janus.jcfg /var/snap/janus-gateway/common/etc
-# sudo cp /opt/fruitnanny/configuration/janus/janus.plugin.streaming.jcfg /var/snap/janus-gateway/common/etc
-# sudo cp /opt/fruitnanny/configuration/janus/janus.transport.http.jcfg /var/snap/janus-gateway/common/etc
+sudo cp /opt/fruitnanny/configuration/janus/janus.jcfg /var/snap/janus-gateway/common/etc
+ # sudo nano /opt/fruitnanny/configuration/janus/janus.jcfg
+ # изменить на ниже
+ #        configs_folder = "/opt/janus/etc/janus"                 # Configuration files folder
+ #        plugins_folder = "/opt/janus/lib/janus/plugins"                 # Plugins folder
+ #        transports_folder = "/opt/janus/lib/janus/transports"   # Transports folder
+ #        events_folder = "/opt/janus/lib/janus/events"                   # Event handlers folder
+ #        loggers_folder = "/opt/janus/lib/janus/loggers"                 # External loggers folder
+sudo cp /opt/fruitnanny/configuration/janus/janus.plugin.streaming.jcfg /var/snap/janus-gateway/common/etc
+sudo cp /opt/fruitnanny/configuration/janus/janus.transport.http.jcfg /var/snap/janus-gateway/common/etc
 
 
 # Nginx
@@ -95,6 +102,12 @@ sudo ln -s /etc/nginx/sites-available/fruitnanny_https /etc/nginx/sites-enabled/
 # Password Nginx
 # sudo sh -c "echo -n 'fr:' >> /etc/nginx/.htpasswd"
 # sudo sh -c "openssl passwd -1 "123" -apr1 >> /etc/nginx/.htpasswd"
+# для входа БЕЗ ПАРОЛЯ в файлах fruitnanny_http и fruitnanny_https
+# sudo nano /etc/nginx/sites-available/fruitnanny_http
+# sudo nano /etc/nginx/sites-available/fruitnanny_https
+#  Закомментировать две строчки
+#       auth_basic "Baby monitor auth";
+#       auth_basic_user_file /etc/nginx/.htpasswd;
 
 
 # Autostart Audio, Video, NodeJS and Janus
