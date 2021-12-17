@@ -18,6 +18,9 @@ sudo chmod +x fr.sh
 ./fr.sh
 ```
 
+# index.ejs
+
+Download index.ejs and replace /opt/fruitnanny/views/index.ejs
 
 # vcgencmd commands for raspberrypi
 vcgencmd measure_temp - получение температуры процессора \
