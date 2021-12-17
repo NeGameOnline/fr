@@ -1,10 +1,21 @@
 # Install git and run sh
 
+Без doker
+```
+wget https://raw.githubusercontent.com/NeGameOnline/fr/main/fr.sh
+sudo chmod +x fr.sh
+./fr.sh
+```
+
+С doker вариант 1
+
 ```
 wget https://raw.githubusercontent.com/NeGameOnline/fr/main/fr_doker1.sh
 sudo chmod +x fr_doker1.sh
 ./fr_doker1.sh
 ```
+
+С doker вариант 2
 
 ```
 wget https://raw.githubusercontent.com/NeGameOnline/fr/main/fr_doker2.sh
@@ -12,15 +23,15 @@ sudo chmod +x fr_doker2.sh
 ./fr_doker2.sh
 ```
 
-```
-wget https://raw.githubusercontent.com/NeGameOnline/fr/main/fr.sh
-sudo chmod +x fr.sh
-./fr.sh
-```
-
 # index.ejs
 
 Download index.ejs and replace /opt/fruitnanny/views/index.ejs
+```
+cd ~
+wget https://raw.githubusercontent.com/NeGameOnline/fr/main/index.ejs
+sudo mv index.ejs /opt/fruitnanny/views/
+```
+
 
 # vcgencmd commands for raspberrypi
 vcgencmd measure_temp - получение температуры процессора \
