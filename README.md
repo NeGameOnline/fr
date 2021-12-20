@@ -1,3 +1,7 @@
+# WTF?
+Скрипт разворачивает немного переделланый проект ivadim/fruitnanny.
+
+
 # Install git and run sh
 
 Без doker
@@ -23,7 +27,7 @@ sudo chmod +x fr_doker2.sh
 ./fr_doker2.sh
 ```
 
-# index.ejs
+# Главная страница index.ejs
 
 Download index.ejs and replace /opt/fruitnanny/views/index.ejs
 ```
@@ -33,7 +37,7 @@ sudo mv index.ejs /opt/fruitnanny/views/
 ```
 
 
-# vcgencmd commands for raspberrypi
+# FAQ vcgencmd commands for raspberrypi
 vcgencmd measure_temp - получение температуры процессора \
 vcgencmd get_camera - показать подключена или нет официальная CSI-камера \
 vcgencmd mem_oom - Статистика событий Out Of Memory, случившихся в области памяти VC4 \
