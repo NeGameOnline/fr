@@ -1,7 +1,7 @@
 # WTF?
 Скрипт разворачивает немного переделланый проект ivadim/fruitnanny без doker. Работает только на Raspberry Pi OS **BUSTER**.
 
-# Install git and run sh
+#  Just simple run sh
 ```
 wget https://raw.githubusercontent.com/NeGameOnline/fr/main/fr.sh
 sudo chmod +x fr.sh
