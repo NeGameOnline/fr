@@ -17,7 +17,7 @@ sudo raspi-config nonint do_camera 0
 cd /opt
 sudo mkdir fruitnanny
 sudo chown pi:pi fruitnanny
-git clone https://github.com/ivadim/fruitnanny
+git clone https://github.com/NeGameOnline/fruitnanny
 
 
 # Generate certificates
@@ -57,12 +57,12 @@ sudo make install
 # git and extra libs
 sudo apt -y install git curl libffi-dev python python-pip
 # docker
-cd ~
-curl -fsSL https://get.docker.com -o get-docker.sh
-sudo sh get-docker.sh
-sudo usermod -aG docker pi
+# cd ~
+# curl -fsSL https://get.docker.com -o get-docker.sh
+# sudo sh get-docker.sh
+# sudo usermod -aG docker pi
 # docker-compose
-sudo apt -y install docker-compose
+# sudo apt -y install docker-compose
 
 # Janus WebRTC Gateway
 # Install janus-gateway on Ubuntu using the Snap Store
@@ -100,8 +100,8 @@ sudo cp /opt/fruitnanny/configuration/nginx/fruitnanny_https /etc/nginx/sites-av
 sudo ln -s /etc/nginx/sites-available/fruitnanny_http /etc/nginx/sites-enabled/
 sudo ln -s /etc/nginx/sites-available/fruitnanny_https /etc/nginx/sites-enabled/
 # Password Nginx
-# sudo sh -c "echo -n 'fr:' >> /etc/nginx/.htpasswd"
-# sudo sh -c "openssl passwd -1 "123" -apr1 >> /etc/nginx/.htpasswd"
+sudo sh -c "echo -n 'fr:' >> /etc/nginx/.htpasswd"
+sudo sh -c "openssl passwd -1 "123" -apr1 >> /etc/nginx/.htpasswd"
 # для входа БЕЗ ПАРОЛЯ в файлах fruitnanny_http и fruitnanny_https
 # sudo nano /etc/nginx/sites-available/fruitnanny_http
 # sudo nano /etc/nginx/sites-available/fruitnanny_https
