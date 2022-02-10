@@ -12,6 +12,13 @@ sudo apt -y install nano git emacs libraspberrypi-dev autoconf automake libtool 
 # sudo raspi-config
 sudo raspi-config nonint do_camera 0
 
+# enable gpio
+sudo apt install pigpio
+sudo raspi-config nonint do_rgpio 0
+sudo systemctl enable pigpiod
+sudo systemctl start pigpiod
+sudo apt install python3-gpiozero python3-pigpio
+
 
 # Clone repository
 cd /opt
