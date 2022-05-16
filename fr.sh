@@ -130,3 +130,8 @@ sudo systemctl start video
 # sudo systemctl start janus
 sudo systemctl enable fruitnanny
 sudo systemctl start fruitnanny
+
+# Получить сертификат для nv.mechanicalrc.com
+# sudo apt install certbot python3-certbot-nginx
+# sudo certbot --nginx -d nv.mechanicalrc.com
+# sudo systemctl reload nginx
