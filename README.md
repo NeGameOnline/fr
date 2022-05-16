@@ -8,6 +8,13 @@ sudo chmod +x fr.sh
 ./fr.sh
 ```
 
+#  Install dwservice
+```
+wget https://www.dwservice.net/download/dwagent_generic.sh
+sudo chmod +x dwagent_generic.sh
+sudo ./dwagent_generic.sh
+```
+
 # Главная страница index.ejs
 Edit  /opt/fruitnanny/views/index.ejs
 
